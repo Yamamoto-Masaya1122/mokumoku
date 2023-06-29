@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
   resources :users, only: %i[new create] do
+    resource :relationships, only: [:create, :destroy]
     member do
       get :other_profile
     end
