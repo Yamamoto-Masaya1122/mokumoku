@@ -6,7 +6,7 @@
         <%= attendee.name %>
       <% end %>
     <% else %>
-      <%= link_to other_profile_user_path(attendee) do %>
+      <%= link_to user_path(attendee) do %>
         <%= attendee.name %>
       <% end %>
     <% end %>
