@@ -27,4 +27,8 @@ class Event < ApplicationRecord
   def future?
     !past?
   end
+
+  def created_by?(current_user)
+    user == current_user
+  end
 end
