@@ -1,6 +1,14 @@
 <li>
   <div class="d-flex align-items-center gap-2 mb-3">
     <%= image_tag attendee.decorate.avatar, class: 'rounded-circle avatar-md' %>
-    <%= attendee.name %>
+    <% if attendee == current_user %>
+      <%= link_to mypage_profile_path do %>
+        <%= attendee.name %>
+      <% end %>
+    <% else %>
+      <%= link_to user_path(attendee) do %>
+        <%= attendee.name %>
+      <% end %>
+    <% end %>
   </div>
 </li>
